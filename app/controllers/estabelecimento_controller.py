@@ -36,7 +36,7 @@ async def listar_estabelecimentos(
     pagina: int = Query(0, ge=0, description="Número da página"),
     limite: int = Query(50, ge=1, le=200, description="Itens por página")
 ):
-    """Retorna a lista de todos os usuários cadastrados"""
+    """Retorna a lista de todos os estabelecimentos cadastrados"""
     offset = pagina * limite
     estabelecimentos = await estabelecimento_repo.obter_todas(limite=limite, pagina=offset)
 
